@@ -19,4 +19,4 @@ Die Daten werden hier geprüft. Beispiel hierfür: Wenn er an einem Samstag oder
 ### Datenausgabe
 Diese Daten sollen dann für alle verständlich ausgegeben werden. Dies soll in Form einer Aufstellung auf einer A4 Seite realisiert werden und dem Mitarbeiter sowie dem Unternehmen zur Verfügung stehen.
 
-![Ablaufdiagramm](workflow_neu.jpg)
+![Ablaufdiagramm](Workflow.jpg)
