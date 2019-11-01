@@ -1,4 +1,4 @@
-# README
+# README - Budget planer
 
 ## Ausgangslage
 Wer kennt es nicht...am Ende des Monats ist das Konto auf 0 geschrumpft und man weiss nicht wieso? Da wäre eine Übersicht über alle Kosten sehr hilfreich, welche einem motiviert seine Ausgaben zu minimieren, um auch nur einen kleinen Betrag auf sein Sparkonto übertragen zu können. Dies betrifft mich vor allem seit dem ich eine eigene Wohnung habe und nicht mehr 100% arbeite.
@@ -18,4 +18,4 @@ Diese Daten sollen dann gespeichert werden und mit ihnen soll dann der Betrag be
 ### Datenausgabe
 Als Ausgabe soll ein übersichtlicher Monatsüberblick erstellt werden, welcher dann ausgedruckt oder per Email versendet werden kann, um dann idealerweise den Endbetrag auf sein Sparkonto übertragen kann.
 
-![Ablaufdiagramm](docs/Workflow.jpg)
+![Ablaufdiagramm]()
