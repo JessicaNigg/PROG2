@@ -1,22 +1,21 @@
 # README
 
 ## Ausgangslage
-Mein momentaner Arbeitgeber hat ein sehr kompliziertes, zeitfressendes und für den Leien unverständliches Zeriterfassungsprogramm. Mich interessiert es sehr, wie man so ein Programm schreibt und welcher Aufwand dahinter steckt. Auch interessiert es mich, ob ich mit den Fähigkeiten und Grundlagen aus diesem Studium ein solches Programm schreichen könnte. Dafür sah ich diese Semesterarbeit als tolle Chance an.
+Wer kennt es nicht...am Ende des Monats ist das Konto auf 0 geschrumpft und man weiss nicht wieso? Da wäre eine Übersicht über alle Kosten sehr hilfreich, welche einem motiviert seine Ausgaben zu minimieren, um auch nur einen kleinen Betrag auf sein Sparkonto übertragen zu können. Dies betrifft mich vor allem seit dem ich eine eigene Wohnung habe und nicht mehr 100% arbeite.
 
 ## Funktion/Projektidee
-Somit würde ich als Semesterarbeit gerne eine vereinfachte Zeiterfassung programmieren, welche Daten von Mitarbeitern entgegennimmt, mit diesen Berechnungen durchführt, sie bearbeitet und am Ende schön formatiert ausgibt, sodass es auch für den Mitarbeiter nachvollziehbar & verständlich ist.
-
+Die Idee ist ein Budgetplaner, der einem eine Übersicht über die Fixkosten & -einnahmen, monatlichen Kosten und Einahmen, sowie einem anzeigt welchen Betrag man am Ende des Monats auf sein Sparkonto überweisen kann.
 
 ## Workflow
 Die genauen Funktionen und den Datenstrom durch das Programm wird nachfolgend detailliert beschrieben.
 
 ### Dateneingabe
-Der Mitarbeiter wählt sein Profil aus. Anschliessend stempelt er ein. Sollte er eine Pause oder Mittag machen muss er aus- und wieder einstempeln. Am Ende des Tages, wenn er seinen Arbeitstag beendet, stempelt er wieder aus.
+Man kann einen neuen Monat erfassen oder einen bestehenden Monat bearbeiten. Des weiteren können Fixkosten und Fixeinnahmen erfasst werden. Innerhalb des Monats können dann Kosten und Einnahmen erfasst werden, welche angefallen sind oder anfallen werden. Oder man kann die bereits erfassten Kosten oder Einnahmen bearbeiten.
 
 ### Datenverarbeitung/Speicherung
-Die Daten werden hier geprüft. Beispiel hierfür: Wenn er an einem Samstag oder Sonntag gearbeitet hat, erhält er einen Zusatz auf seinen Stundenlohn. Anschliessend sollen diese veränderten Daten gespeichert werden.
+Diese Daten sollen dann gespeichert werden und mit ihnen soll dann der Betrag berechnet werden, welcher am Ende des Monats noch übrig bleibt. Diese veränderten Daten sollen dann auch gespeichert werden und für die Ausgabe zur Verfügung stehen.
 
 ### Datenausgabe
-Diese Daten sollen dann für alle verständlich ausgegeben werden. Dies soll in Form einer Aufstellung auf einer A4 Seite realisiert werden und dem Mitarbeiter sowie dem Unternehmen zur Verfügung stehen.
+Als Ausgabe soll ein übersichtlicher Monatsüberblick erstellt werden, welcher dann ausgedruckt oder per Email versendet werden kann, um dann idealerweise den Endbetrag auf sein Sparkonto übertragen kann.
 
 ![Ablaufdiagramm](docs/Workflow.jpg)
