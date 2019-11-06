@@ -18,4 +18,4 @@ Diese Daten sollen dann gespeichert werden und mit ihnen soll dann der Betrag be
 ### Datenausgabe
 Als Ausgabe soll ein übersichtlicher Monatsüberblick erstellt werden, welcher dann ausgedruckt oder per Email versendet werden kann, um dann idealerweise den Endbetrag auf sein Sparkonto übertragen kann.
 
-![Ablaufdiagramm](Workflow.jpg)
+![Ablaufdiagramm](docs/bilder/Workflow.jpg)
