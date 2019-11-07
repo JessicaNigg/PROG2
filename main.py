@@ -26,6 +26,16 @@ def edit_main():
 def edit_fixkosten():
 	return render_template("edit_fixkosten.html")
 
+#Edit_fixeinnahmen-Seite
+@app.route('/edit/fixeinnahmen')
+def edit_fixeinnahmen():
+	return render_template("edit_fixeinnahmen.html")
+
+#Edit_monat_auswahl-Seite
+@app.route('/edit/monat_auswahl')
+def edit_monat_auswahl():
+	return render_template("edit_monat_auswahl.html")
+
 #Overview-Seite
 @app.route('/overview')
 def overview():
