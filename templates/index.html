@@ -1,13 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
 {% include "header.html" %}
 <body>
-	{% "include navigation_template" %}
+	{% include "navigation_template.html" %}
 <main>
 <!--Begrüssung-->
 <div class="card text-center">
 		<div class="card-body">
-		  Willkommen beim Budget-Planer!
+		  <h1 class="card-title">Willkommen beim Budget-Planer!</h1>
 		</div>
 </div>
+
+<br>
+
+<!--Auswahl der Seitenmöglichkeiten-->
+<div class="card-deck">
+		<div class="card">
+		  <div class="card-body">
+			<h5 class="card-title">Add</h5>
+			<p class="card-text">Lege einen neuen Monat an.</p>
+		</div>
+		  <div class="card-footer">
+			<a href="add.html" class="btn btn-dark btn-sm">Go!</a>
+		  </div>
+		</div>
+		<div class="card">
+		  <div class="card-body">
+			<h5 class="card-title">Edit</h5>
+			<p class="card-text">Bearbeite einen bereits vorhandenen Monat oder die Fixeinnahmen/-kosten.</p>
+		</div>
+		  <div class="card-footer">
+			<a href="edit.html" class="btn btn-dark btn-sm">Go!</a>
+		  </div>
+		</div>
+		<div class="card">
+		  <div class="card-body">
+			<h5 class="card-title">Overview</h5>
+			<p class="card-text">Übersicht über einen Monat inklusive Auswertung.</p>
+		</div>
+		  <div class="card-footer">
+			<a href="overview.html" class="btn btn-dark btn-sm">Go!</a>
+		  </div>
+		</div>
+	  </div>
+
+
+
+
 
 
 
