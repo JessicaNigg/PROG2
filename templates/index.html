@@ -21,7 +21,7 @@
 			<p class="card-text">Lege einen neuen Monat an.</p>
 		</div>
 		  <div class="card-footer">
-			<a href="add.html" class="btn btn-dark btn-sm">Go!</a>
+			<a href="{{ url_for('add') }}" class="btn btn-dark btn-sm">Go!</a>
 		  </div>
 		</div>
 		<div class="card">
@@ -30,7 +30,7 @@
 			<p class="card-text">Bearbeite einen bereits vorhandenen Monat oder die Fixeinnahmen/-kosten.</p>
 		</div>
 		  <div class="card-footer">
-			<a href="edit_main.html" class="btn btn-dark btn-sm">Go!</a>
+			<a href="{{ url_for('edit_main') }}" class="btn btn-dark btn-sm">Go!</a>
 		  </div>
 		</div>
 		<div class="card">
@@ -39,7 +39,7 @@
 			<p class="card-text">Übersicht über einen Monat inklusive Auswertung.</p>
 		</div>
 		  <div class="card-footer">
-			<a href="overview.html" class="btn btn-dark btn-sm">Go!</a>
+			<a href="{{ url_for('overview') }}" class="btn btn-dark btn-sm">Go!</a>
 		  </div>
 		</div>
 	  </div>

@@ -21,6 +21,11 @@ def add():
 def edit_main():
 	return render_template("edit_main.html")
 
+#Edit_fixkosten-Seite
+@app.route('/edit/fixkosten')
+def edit_fixkosten():
+	return render_template("edit_fixkosten.html")
+
 #Overview-Seite
 @app.route('/overview')
 def overview():

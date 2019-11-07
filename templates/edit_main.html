@@ -14,7 +14,18 @@
 
 <br>
 
-
+<!--Buttons als Auswahl-->
+<div class="btn-group" role="group" aria-label="Second group">
+    <div>
+        <a class="btn btn-dark btn-large" href="{{ url_for('edit_fixkosten') }}" role="button">Fixkosten</a>
+    </div>
+    <div>
+        <a class="btn btn-dark btn-large" href="#" role="button">Fixeinnahmen</a>
+    </div>
+    <div>
+        <a class="btn btn-dark btn-large" href="#" role="button">Monat</a>
+    </div>
+</div>
 
 </main>
 {% include "footer_template.html" %}
