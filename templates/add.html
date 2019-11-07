@@ -5,7 +5,29 @@
 	{% include "navigation_template.html" %}
 <main>
 
+<!--Titel der Seite-->
+<div class="card">
+		<div class="card-body">
+		  <h2 class="card-title">Add</h2>
+		</div>
+</div>
 
+<br>
+
+<!--Formular um Monat-->
+<form>
+	<div class="form-group">
+		<label for="AddMonth">Monat</label>
+		<input type="text" class="form-control" id="AddMonth" aria-describedby="month" placeholder="Monat eingeben" required>
+	
+			<label class="my-1 mr-2" for="inlineFormYear">Jahr</label>
+			<select class="custom-select mr-sm-2" id="inlineFormYear" required>
+			  <option value="1">2019</option>
+			  <option value="2">2020</option>
+			</select>
+		  </div>
+	<button type="submit" class="btn btn-dark">Anlegen</button>
+</form>
 
 
 
