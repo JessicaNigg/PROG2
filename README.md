@@ -10,7 +10,7 @@ Die Idee ist ein Budgetplaner, der einem eine Übersicht über die Fixkosten & -
 Die genauen Funktionen und den Datenstrom durch das Programm wird nachfolgend detailliert beschrieben.
 
 ### Dateneingabe
-Man kann einen neuen Monat erfassen oder einen bestehenden Monat bearbeiten. Des weiteren können Fixkosten und Fixeinnahmen erfasst werden. Innerhalb des Monats können dann Kosten und Einnahmen erfasst werden, welche angefallen sind oder anfallen werden. Oder man kann die bereits erfassten Kosten oder Einnahmen bearbeiten.
+Man kann einen neuen Monat erfassen oder einen bestehenden Monat bearbeiten. Innerhalb des Monats können dann Kosten und Einnahmen erfasst werden, welche angefallen sind oder anfallen werden. Oder man kann die bereits erfassten Kosten oder Einnahmen bearbeiten.
 
 ### Datenverarbeitung/Speicherung
 Diese Daten sollen dann gespeichert werden und mit ihnen soll dann der Betrag berechnet werden, welcher am Ende des Monats noch übrig bleibt. Diese veränderten Daten sollen dann auch gespeichert werden und für die Ausgabe zur Verfügung stehen.
@@ -18,4 +18,4 @@ Diese Daten sollen dann gespeichert werden und mit ihnen soll dann der Betrag be
 ### Datenausgabe
 Als Ausgabe soll ein übersichtlicher Monatsüberblick erstellt werden, welcher dann ausgedruckt oder per Email versendet werden kann, um dann idealerweise den Endbetrag auf sein Sparkonto übertragen kann.
 
-![Ablaufdiagramm](docs/bilder/Workflow.jpg)
+![Ablaufdiagramm](docs/bilder/Workflow_2.jpg)
