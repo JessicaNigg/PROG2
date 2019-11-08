@@ -16,20 +16,19 @@ def index():
 def add():
 	return render_template("add.html")
 
-#Edit_choose-Seite
-@app.route('/edit')
-def edit_choose():
-	return render_template("edit_choose.html")
+#Month_choose-Seite
+@app.route('/choose')
+def month_choose():
+	return render_template("month_choose.html")
 
-#Edit_month-Seite
-@app.route('/edit/month')
-def edit_month():
-	return render_template("edit_month.html")
+#Month_overview-Seite
+@app.route('/edit/choose/month')
+def month_overview():
+	return render_template("month_overview.html")
 
-#Overview-Seite
-@app.route('/overview')
-def overview():
-	return render_template("overview.html")
+#Month_edit-Seite
+@app.route('/')
+
 
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)

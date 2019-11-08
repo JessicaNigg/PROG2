@@ -17,7 +17,7 @@
 <div class="card-deck">
 		<div class="card">
 		  <div class="card-body">
-			<h5 class="card-title">Add</h5>
+			<h5 class="card-title">Neuer Monat</h5>
 			<p class="card-text">Lege einen neuen Monat an.</p>
 		</div>
 		  <div class="card-footer">
@@ -26,21 +26,21 @@
 		</div>
 		<div class="card">
 		  <div class="card-body">
-			<h5 class="card-title">Edit</h5>
-			<p class="card-text">Bearbeite einen bereits vorhandenen Monat.</p>
+			<h5 class="card-title">Übersicht Monat</h5>
+			<p class="card-text">Sieh dir einen Monat im Überblick an und bearbeite diesen.</p>
 		</div>
+		<form>
 		  <div class="card-footer">
-			<a href="{{ url_for('edit_choose') }}" class="btn btn-dark btn-sm">Go!</a>
+			  <div class="form-group">
+					<input type="month" id="select_month" name="select_month"
+						   min="2019-11" value="2019-11">
+				<button type="submit" class="btn btn-dark btn-sm" href="#" >Übersicht</button>
+				<button type="submit" class="btn btn-dark btn-sm" href="#">Bearbeiten</button>
+				</div>
 		  </div>
-		</div>
-		<div class="card">
-		  <div class="card-body">
-			<h5 class="card-title">Overview</h5>
-			<p class="card-text">Übersicht über einen Monat inklusive Auswertung.</p>
-		</div>
-		  <div class="card-footer">
-			<a href="{{ url_for('overview') }}" class="btn btn-dark btn-sm">Go!</a>
-		  </div>
+		</form>
+		
+
 		</div>
 	  </div>
 
