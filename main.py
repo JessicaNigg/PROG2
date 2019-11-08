@@ -16,25 +16,11 @@ def index():
 def add():
 	return render_template("add.html")
 
-#Edit_main-Seite
+#Edit_choose-Seite
 @app.route('/edit')
-def edit_main():
-	return render_template("edit_main.html")
+def edit_choose():
+	return render_template("edit_choose.html")
 
-#Edit_fixkosten-Seite
-@app.route('/edit/fixkosten')
-def edit_fixkosten():
-	return render_template("edit_fixkosten.html")
-
-#Edit_fixeinnahmen-Seite
-@app.route('/edit/fixeinnahmen')
-def edit_fixeinnahmen():
-	return render_template("edit_fixeinnahmen.html")
-
-#Edit_monat_auswahl-Seite
-@app.route('/edit/monat_auswahl')
-def edit_monat_auswahl():
-	return render_template("edit_monat_auswahl.html")
 
 #Overview-Seite
 @app.route('/overview')
