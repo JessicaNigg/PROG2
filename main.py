@@ -21,6 +21,10 @@ def add():
 def edit_choose():
 	return render_template("edit_choose.html")
 
+#Edit_month-Seite
+@app.route('/edit/month')
+def edit_month():
+	return render_template("edit_month.html")
 
 #Overview-Seite
 @app.route('/overview')
