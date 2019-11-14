@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html lang="de">
 {% include "header_template.html" %}
+
 <body>
 	{% include "navigation_template.html" %}
-<main>
-<!--Begrüssung-->
-<div class="card text-center">
-		<div class="card-body">
-		  <h1 class="card-title">Willkommen beim Budget-Planer!</h1>
-		</div>
-</div>
-
-<br>
-
-<!--Auswahl der Seitenmöglichkeiten-->
-<div class="card-deck">
-		<div class="card">
-		  <div class="card-body">
-			<h5 class="card-title">Neuer Monat</h5>
-			<p class="card-text">Lege einen neuen Monat an.</p>
-		</div>
-		<form>
-			<div class="card-footer">
-				<div class="form-group">
-					  <input type="month" id="select_month" name="select_month"
-							 min="2019-11" value="2019-11">
-				  <button type="submit" class="btn btn-dark btn-sm" href="#" >Hinzufügen</button>
-				  </div>
-			</div>
-		  </form>
-		</div>
-		<div class="card">
-		  	<div class="card-body">
-				<h5 class="card-title">Bestehender Monat</h5>
-				<p class="card-text">Sieh dir einen Monat im Überblick an und bearbeite diesen.</p>
-			</div>
-		<form>
-		  <div class="card-footer">
-			  <div class="form-group">
-					<input type="month" id="select_month" name="select_month"
-						   min="2019-11" value="2019-11">
-				<button type="submit" class="btn btn-dark btn-sm" href="#" >Übersicht</button>
-				<button type="submit" class="btn btn-dark btn-sm" href="#">Bearbeiten</button>
+	<main>
+		<div class="container">
+			<!--Begrüssung-->
+			<div class="card text-center">
+				<div class="card-body">
+					<h1 class="card-title">Willkommen beim Budget-Planer!</h1>
 				</div>
-		  </div>
-		</form>
+			</div>
+
+			<br>
+
+			<!--Auswahl der Seitenmöglichkeiten-->
+			<div class="card-deck">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Neuer Monat</h5>
+						<p class="card-text">Lege einen neuen Monat an.</p>
+					</div>
+					<div class="card-footer">
+						<form method="POST">
+							<div class="form-group">
+								<label for="monthInput">Monat</label>
+								<input type="text" class="form-control" id="monthInput" aria-describedby="month"
+									placeholder="Monat eingeben" name="month">
+								<small id="monthHelp" class="form-text text-muted"> Gebe den Monat als Zahl ein (Bsp. 08 für August)</small>
+							</div>
+							<div class="form-group">
+								<label for="yearInput">Jahr</label>
+								<input type="text" class="form-control" id="yearInput" aria-describedby="year"
+									placeholder="Jahr eingeben" name="year">
+								<small id="yearHelp" class="form-text text-muted">Gebe das Jahr wie folgt ein: 2019</small>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-dark btn-sm" name="submit"
+									value="hinzufuegen">Hinzufügen</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Bestehender Monat</h5>
+						<p class="card-text">Sieh dir einen Monat im Überblick an und bearbeite diesen.</p>
+					</div>
+					<div class="card-footer">
+						<form method="POST">
+							<div class="form-group">
+								<label for="monthInput">Monat</label>
+								<input type="text" class="form-control" id="monthInput" aria-describedby="month"
+									placeholder="Monat eingeben" name="month">
+								<small id="monthHelp" class="form-text text-muted">Gebe den Monat als Zahl ein (08 für August)</small>
+							</div>
+							<div class="form-group">
+								<label for="yearInput">Jahr</label>
+								<input type="text" class="form-control" id="yearInput" aria-describedby="year"
+									placeholder="Jahr eingeben" name="year">
+								<small id="yearHelp" class="form-text text-muted">Gebe das Jahr wie folgt ein: 2019</small>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-dark btn-sm" name="submit"
+									value="overview">Übersicht</button>
+								<button type="submit" class="btn btn-dark btn-sm" name="submit"
+									value="edit">Bearbeiten</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
 		</div>
-	  </div>
-
-
-
-
-
-
-
-</main>
-{% include "footer_template.html" %}
+	</main>
+	{% include "footer_template.html" %}
 
 
 </body>
+
 </html>
