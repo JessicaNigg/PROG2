@@ -8,4 +8,4 @@ def add_month(month, year):
     with open(path, "w", encoding="utf-8") as open_file:
         json.dump(data, open_file, indent=4)
 
-add_month('05', 2019)
+add_month('01', 2019)
