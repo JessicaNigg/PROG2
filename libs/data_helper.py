@@ -1,4 +1,5 @@
 import json
+"""
 def add_month(month, year):
     name = str(month) + str(year) + ".json"
     data = {
@@ -9,3 +10,4 @@ def add_month(month, year):
         json.dump(data, open_file, indent=4)
 
 add_month('01', 2019)
+"""
