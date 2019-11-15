@@ -4,7 +4,7 @@
 <body>
 	{% include "navigation_template.html" %}
 <main>
-
+		<div class="container">
 <!--Titel der Seite-->
 <div class="card">
 		<div class="card-body">
@@ -15,22 +15,26 @@
 <br>
 
 <!--Formular um Monat-->
-<form>
+<form method="POST">
 	<div class="form-group">
-		<label for="AddMonth">Monat</label>
-		<input type="text" class="form-control" id="AddMonth" aria-describedby="month" placeholder="Monat eingeben" required>
-	
-			<label class="my-1 mr-2" for="inlineFormYear">Jahr</label>
-			<select class="custom-select mr-sm-2" id="inlineFormYear" required>
-			  <option value="1">2019</option>
-			  <option value="2">2020</option>
-			</select>
+			<div class="form-group">
+					<label for="monthInput">Monat</label>
+					<input type="text" class="form-control" id="monthInput" aria-describedby="month"
+						placeholder="Monat eingeben" name="month">
+					<small id="monthHelp" class="form-text text-muted"> Gebe den Monat als Zahl ein (Bsp. 08 für August)</small>
+				</div>
+				<div class="form-group">
+					<label for="yearInput">Jahr</label>
+					<input type="text" class="form-control" id="yearInput" aria-describedby="year"
+						placeholder="Jahr eingeben" name="year">
+					<small id="yearHelp" class="form-text text-muted">Gebe das Jahr wie folgt ein: 2019</small>
+				</div>
 		  </div>
-	<button type="submit" class="btn btn-dark">Anlegen</button>
+	<button type="submit" class="btn btn-dark">Hinzufügen</button>
 </form>
 
 
-
+</div>
 </main>
 {% include "footer_template.html" %}
     

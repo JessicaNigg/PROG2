@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
 {% include "header_template.html" %}
+
 <body>
-	{% include "navigation_template.html" %}
-<main>
+  {% include "navigation_template.html" %}
+  <main>
 
-<!--Titel der Seite-->
-<div class="card">
-    <div class="card-body">
-      <h2 class="card-title">Monatsübersicht</h2>
+    <!--Titel der Seite-->
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Monatsübersicht</h2>
+        </div>
+      </div>
+
+      <br>
+
+      <button onclick="javascript:window.print()" class="btn-print btn-dark btn-sm">Print</button>
+
+      <button class="btn-dark btn-sm" a href="Mail-Adresse? subject=subject text">Email</button>
+
     </div>
-</div>
+  </main>
+  {% include "footer_template.html" %}
 
-<br>
 
-<button  onclick="javascript:window.print()" class="btn-print btn-dark btn-sm">Print</button>
-
-<button class="btn-dark btn-sm" a href="Mail-Adresse? subject=subject text">Email</button>
-
-</main>
-{% include "footer_template.html" %}
-    
-    
 </body>
+
 </html>
