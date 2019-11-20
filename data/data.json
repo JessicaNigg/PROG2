@@ -1,11 +1,11 @@
-
 {
-    "<month><year>": [
-        {
-            "ausgaben": [],
-            "einnahmen": []
-        }
-    ]
+    "112019": {
+        "expenses": {
+            "112019986": {
+                "amount": "30",
+                "title": "test2"
+            }
+        },
+        "income": {}
+    }
 }
-
-

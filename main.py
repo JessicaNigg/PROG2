@@ -3,7 +3,7 @@ from flask import render_template
 from flask import url_for
 from flask import redirect
 from flask import request
-from libs import data_test
+from libs import data_helper
 
 app = Flask("time_recording")
 
@@ -24,11 +24,6 @@ def index():
 			return redirect(url_for('month_edit', year = year, month = month))
 
 	return render_template("index.html")
-
-#Add-Seite
-@app.route('/add')
-def add():
-	return render_template("add.html")
 
 
 #Month_overview-Seite
