@@ -15,7 +15,7 @@ def index():
 	if request.method == 'POST':
 		year = request.form['year']
 		month = request.form['month']
-		returned_data = data_test.month_save(month, year)
+		returned_data = data_helper.month_save(month, year)
 		if request.form['submit'] == 'uebersicht':
 			return redirect(url_for('month_overview', year = year, month = month))
 		elif request.form['submit'] == 'bearbeiten':
