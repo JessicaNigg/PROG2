@@ -27,7 +27,7 @@ def month_save(month, year):
         return
     else:
         data[name] = {
-            "expenses": {}, "income":{}
+            "expenses": {}, "income":{}, "balance": "0"
         }
     save_json(path,data)
 
@@ -57,6 +57,7 @@ def expenses_add(month,year,amount,title,path):
     data[name]["expenses"][key] = { 'amount': str(amount), 'title': str(title)}
     
     save_json(path, data)
+    decrease_balance(amount,month,year,path)
 
 
     return
@@ -67,8 +68,11 @@ def expenses_delete(path,key,month,year):
     try:
         name = str(month) + str(year)
         data = load_json(path)
+        key = str(key)
+        amount = data[name]["expenses"][key]["amount"]
         data[name]["expenses"].pop(str(key))
         save_json(path,data)
+        increase_balance(amount,month,year,path)
         return
     except:
         return
@@ -86,6 +90,7 @@ def earnings_add(month,year,amount,title,path):
     
     save_json(path, data)
 
+    increase_balance(amount,month,year,path)
 
     return
 
@@ -96,16 +101,36 @@ def earnings_delete(path,key,month,year):
     try:
         name = str(month) + str(year)
         data = load_json(path)
+        key = str(key)
+        amount = data[name]["income"][key]["amount"]
         data[name]["income"].pop(str(key))
         save_json(path,data)
+        decrease_balance(amount,month,year,path)
         return
     except:
         return
 
 
-#Funktion um Einnahmen & Kosten eines Monats als Summe zu berechnen:
-def calculate_month():
+#Funktion Saldo zu erhöhen:
+def increase_balance(amount, month, year, path):
+    name = str(month) + str(year)
+    data = load_json(path)
+    balance = float(data[name]["balance"]) + float(amount)
+    data[name]["balance"] = str(balance)
+    save_json(path, data)
     return
+
+
+
+#Funktion Saldo verringern
+def decrease_balance(amount, month, year, path):
+    name = str(month) + str(year)
+    data = load_json(path)
+    balance = float(data[name]["balance"]) - float(amount)
+    data[name]["balance"] = str(balance)
+    save_json(path, data)
+    return
+
 
 
 #Funktion um Monat zu löschen:
@@ -118,3 +143,4 @@ def month_delete(path,month,year):
         return
     except:
         return
+

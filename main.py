@@ -13,15 +13,15 @@ app = Flask("time_recording")
 def index():
 	print(request.form)
 	if request.method == 'POST':
-		year = request.form['year']
-		month = request.form['month']
-		returned_data = data_helper.month_save(month, year)
 		if request.form['submit'] == 'uebersicht':
 			return redirect(url_for('month_overview', year = year, month = month))
 		elif request.form['submit'] == 'bearbeiten':
 			return redirect(url_for('month_edit', year = year, month = month))
 		elif request.form['submit'] == 'hinzufuegen':
-			return redirect(url_for('month_edit', year = year, month = month))
+			year = request.form['year']
+			month = request.form['month']
+			data_helper.month_save(month, year)
+			return render_template("index.html")
 
 	return render_template("index.html")
 
