@@ -67,18 +67,18 @@
 							<div class="form-group">
 								<label for="exampleFormMonthSelect">Monat</label>
 								<select class="form-control" id="exampleFormMonthSelect" name="month">
-									<option>01</option>
-									<option>02</option>
-									<option>03</option>
-									<option>04</option>
-									<option>05</option>
-									<option>06</option>
-									<option>07</option>
-									<option>08</option>
-									<option>09</option>
-									<option>10</option>
-									<option>11</option>
-									<option>12</option>
+									<option value="1">Januar</option>
+									<option value="2">Februar</option>
+									<option value="3">März</option>
+									<option value="4">April</option>
+									<option value="5">Mai</option>
+									<option value="6">Juni</option>
+									<option value="7">Juli</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">Oktober</option>
+									<option value="11">November</option>
+									<option value="12">Dezember</option>
 								</select>
 							</div>
 							<div class="form-group">
@@ -93,13 +93,61 @@
 							<div class="form-group">
 								<button type="submit" class="btn btn-dark btn-sm" name="submit"
 									value="uebersicht">Übersicht</button>
-								<button type="submit" class="btn btn-dark btn-sm" name="submit"
-									value="bearbeiten">Bearbeiten</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
+
+			<br>
+
+			<div class="card-deck">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Einnahmen hinzufügen</h5>
+						<p class="card-text">Füge neue Einnahmen hinzu, die zu erhalten hast.</p>
+					</div>
+					<div class="card-footer">
+						<form method="POST">
+							<div class="form-group">
+								<label for="exampleEarningsAmountInput1">Betrag</label>
+    							<input type="number" class="form-control" id="exampleEarningsAmountInput1">
+							</div>
+							<div class="form-group">
+								<label for="exampleEarningsTitleInput1">Titel</label>
+    							<input type="text" class="form-control" id="exampleTitleAmountInput1" placeholder="Bsp. Lohn">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-dark btn-sm" name="submit"
+									value="hinzufuegen">Hinzufügen</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Kosten hinzufügen</h5>
+						<p class="card-text">Füge neue Kosten hinzu, die angefallen sind.</p>
+					</div>
+					<div class="card-footer">
+						<form method="POST">
+							<div class="form-group">
+								<label for="exampleEarningsAmountInput2">Betrag</label>
+    							<input type="number" class="form-control" id="exampleEarningsAmountInput2">
+							</div>
+							<div class="form-group">
+								<label for="exampleEarningsTitleInput2">Titel</label>
+    							<input type="text" class="form-control" id="exampleTitleAmountInput2" placeholder="Bsp. Miete">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-dark btn-sm" name="submit"
+									value="hinzufuegen">Hinzufügen</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			
 
 
 

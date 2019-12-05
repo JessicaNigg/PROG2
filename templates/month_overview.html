@@ -16,6 +16,43 @@
 
       <br>
 
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Betrag</th>
+            <th scope="col">Beschreibung</th>
+            <button type="submit" class="btn btn-dark btn-sm" name="bearbeiten_betrag"
+              value="bearbeiten_betrag">Bearbeiten</button>
+            <button type="submit" class="btn btn-danger btn-sm" name="löschen_betrag"
+              value="löschen_betrag">Löschen</button>
+          </tr>
+        </thead>
+        <tbody>
+
+        <!--Aus Code von Jeffrey kopiert-->
+          {%for key,value in persons.items()%}
+
+          <tr>
+            {%for key,value in value.items()%}
+            {%if key == "firstname" or key == "lastname" %}
+            <td> {{value}} </td>
+            {%else%}
+            <td class="text-right">{{value}}</td>
+            {%endif %}
+            {% endfor %}
+            <td><a class="btn btn-primary" href="http://127.0.0.1:5000/person/{{path}}/{{key}}"
+                role="button">Details</a></td>
+          </tr>
+          {% endfor %}
+          <!--Ende Code-->
+          
+        </tbody>
+      </table>
+
+
+
+
       <button onclick="javascript:window.print()" class="btn-print btn-dark btn-sm">Print</button>
 
       <button class="btn-dark btn-sm" a href="Mail-Adresse? subject=subject text">Email</button>
