@@ -10,49 +10,21 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title">Monatsübersicht</h2>
+          <h1 class="card-title">Monatsübersicht</h1>
         </div>
       </div>
 
       <br>
+      <br>
 
-      <table class="table">
+      <h2>Übersicht Einnahmen</h2>
+
+      <table class="table table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Betrag</th>
-            <th scope="col">Beschreibung</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-
-
-          {%for key,value in expenses.items()%}
-
-          <tr>
-
-            <td> {{key}} </td>
-
-            <td class="text-right">{{value['amount']}} CHF</td>
-            <td>{{value['title']}}</td>   
-            <td><a href="http://127.0.0.1:5000/edit/expenses/{{key}}/{{year}}/{{month}}" class="btn btn-dark btn-sm" role="button">Bearbeiten</a>  
-                <a href="http://127.0.0.1:5000/delete/expenses/{{key}}/{{year}}/{{month}}" class="btn btn-danger btn-sm" role="button">Löschen</a></td>
-          </tr>
-          {% endfor %}
-
-
-        </tbody>
-      </table>
-
-
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Betrag</th>
-            <th scope="col">Beschreibung</th>
-            <th scope="col"></th>
+            <th scope="col" class="col-4">Betrag</th>
+            <th scope="col" class="col-4">Beschreibung</th>
+            <th scope="col" class="col-4"> </th>
           </tr>
         </thead>
         <tbody>
@@ -61,10 +33,7 @@
           {%for key,value in income.items()%}
 
           <tr>
-
-            <td> {{key}} </td>
-
-            <td class="text-right">{{value['amount']}} CHF</td>
+            <td class="text-allign">{{value['amount']}} CHF</td>
             <td>{{value['title']}}</td>
             <td><a href="http://127.0.0.1:5000/edit/earning/{{key}}/{{year}}/{{month}}" class="btn btn-dark btn-sm" role="button">Bearbeiten</a>
               <a href="http://127.0.0.1:5000/delete/earning/{{key}}/{{year}}/{{month}}" class="btn btn-danger btn-sm" role="button">Löschen</a></td>
@@ -75,24 +44,55 @@
         </tbody>
       </table>
 
-      <table class="table">
+      <br>
+
+      <h2>Übersicht Kosten</h2>
+
+      <table class="table table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Summe</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col" class="text-right">{{balance}} CHF</th>
+            <th scope="col" class="col-4">Betrag</th>
+            <th scope="col" class="col-4">Beschreibung</th>
+            <th scope="col" class="col-4"></th>
           </tr>
         </thead>
+        <tbody>
 
+
+          {%for key,value in expenses.items()%}
+
+          <tr>
+            <td class="text-allign">{{value['amount']}} CHF</td>
+            <td>{{value['title']}}</td>   
+            <td><a href="http://127.0.0.1:5000/edit/expenses/{{key}}/{{year}}/{{month}}" class="btn btn-dark btn-sm" role="button">Bearbeiten</a>  
+                <a href="http://127.0.0.1:5000/delete/expenses/{{key}}/{{year}}/{{month}}" class="btn btn-danger btn-sm" role="button">Löschen</a></td>
+          </tr>
+          {% endfor %}
+
+
+        </tbody>
       </table>
 
+      <br>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Summe</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col" class="text-right">{{balance}} CHF</th>
+        </tr>
+      </thead>
+
+    </table>
 
 
 
-      <button onclick="javascript:window.print()" class="btn-print btn-dark btn-sm">Print</button>
 
-      <a class="btn-print btn-dark btn-sm" a href="mailto:jessica_nigg@hotmail.de?subject=Saldo Monat&amp;body=Das ist dein Saldo für die Überweisung:{{balance}}">Email</a>
+      <button onclick="javascript:window.print()" class="btn btn-print btn-dark btn-sm">Print</button>
+
+      <a class="btn btn-print btn-dark btn-sm" a href="mailto:jessica_nigg@hotmail.de?subject=Saldo Monat&amp;body=Das ist dein Saldo für die Überweisung: {{balance}} CHF">Email</a>
 
     </div>
   </main>

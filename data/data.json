@@ -5,18 +5,8 @@
         "balance": "0.0"
     },
     "12019": {
-        "expenses": {
-            "12019625": {
-                "amount": "500",
-                "title": "Miete Januar"
-            }
-        },
-        "income": {
-            "12019783": {
-                "amount": "500",
-                "title": "Lohn"
-            }
-        },
+        "expenses": {},
+        "income": {},
         "balance": "0.0"
     },
     "32019": {
