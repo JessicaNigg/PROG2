@@ -1,7 +1,6 @@
 import json
 import random
 
-path = "./data/data.json"
 
 #Funktion um Json-Dateien zu speichern
 def save_json(path, data):
@@ -19,7 +18,7 @@ def load_json(path):
         return data
 
 #Funktion um einen Monat zu speichern:
-def month_save(month, year):
+def month_save(month, year, path):
     #Versuch Json auszulesen
     name = str(month) + str(year)
     data = load_json(path)
@@ -38,12 +37,13 @@ def expenses_update(path,key,month,year,amount,title):
     expenses_add(month,year,amount,title,path)
 
     return
-#HTML-Formular erstellen mit bereits ausgefüllten Feldern
 
+def earnings_update(path,key,month,year,amount,title):
+    earnings_delete(path,key,month,year)
+    earnings_add(month,year,amount,title,path)
 
-#Funktion um einen Monat in der Übersicht anzuzeigen:
-def month_show_overview():
     return
+
 
 
 

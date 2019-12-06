@@ -22,32 +22,69 @@
             <th scope="col">#</th>
             <th scope="col">Betrag</th>
             <th scope="col">Beschreibung</th>
-            <button type="submit" class="btn btn-dark btn-sm" name="bearbeiten_betrag"
-              value="bearbeiten_betrag">Bearbeiten</button>
-            <button type="submit" class="btn btn-danger btn-sm" name="löschen_betrag"
-              value="löschen_betrag">Löschen</button>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
 
-        <!--Aus Code von Jeffrey kopiert-->
-          {%for key,value in persons.items()%}
+
+          {%for key,value in expenses.items()%}
 
           <tr>
-            {%for key,value in value.items()%}
-            {%if key == "firstname" or key == "lastname" %}
-            <td> {{value}} </td>
-            {%else%}
-            <td class="text-right">{{value}}</td>
-            {%endif %}
-            {% endfor %}
-            <td><a class="btn btn-primary" href="http://127.0.0.1:5000/person/{{path}}/{{key}}"
-                role="button">Details</a></td>
+
+            <td> {{key}} </td>
+
+            <td class="text-right">{{value['amount']}} CHF</td>
+            <td>{{value['title']}}</td>   
+            <td><a href="http://127.0.0.1:5000/edit/expenses/{{key}}/{{year}}/{{month}}" class="btn btn-dark btn-sm" role="button">Bearbeiten</a>  
+                <a href="http://127.0.0.1:5000/delete/expenses/{{key}}/{{year}}/{{month}}" class="btn btn-danger btn-sm" role="button">Löschen</a></td>
           </tr>
           {% endfor %}
-          <!--Ende Code-->
-          
+
+
         </tbody>
+      </table>
+
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Betrag</th>
+            <th scope="col">Beschreibung</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+          {%for key,value in income.items()%}
+
+          <tr>
+
+            <td> {{key}} </td>
+
+            <td class="text-right">{{value['amount']}} CHF</td>
+            <td>{{value['title']}}</td>
+            <td><a href="http://127.0.0.1:5000/edit/earning/{{key}}/{{year}}/{{month}}" class="btn btn-dark btn-sm" role="button">Bearbeiten</a>
+              <a href="http://127.0.0.1:5000/delete/earning/{{key}}/{{year}}/{{month}}" class="btn btn-danger btn-sm" role="button">Löschen</a></td>
+          </tr>
+          {% endfor %}
+
+
+        </tbody>
+      </table>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Summe</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col" class="text-right">{{balance}} CHF</th>
+          </tr>
+        </thead>
+
       </table>
 
 
@@ -55,7 +92,7 @@
 
       <button onclick="javascript:window.print()" class="btn-print btn-dark btn-sm">Print</button>
 
-      <button class="btn-dark btn-sm" a href="Mail-Adresse? subject=subject text">Email</button>
+      <a class="btn-print btn-dark btn-sm" a href="mailto:jessica_nigg@hotmail.de?subject=Saldo Monat&amp;body=Das ist dein Saldo für die Überweisung:{{balance}}">Email</a>
 
     </div>
   </main>
