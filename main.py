@@ -32,6 +32,15 @@ def index():
             month = request.form['month']
             data_helper.month_save(month, year, path)
             return render_template("index.html")
+        elif request.form['submit'] == 'loeschen':
+            year = request.form['year']
+            month = request.form['month']
+            data = data_helper.load_json(path)
+            name = str(month) + str(year)
+            if name in data:
+                data_helper.month_delete(path,month,year)
+            else:
+                return render_template("index.html")
         elif request.form['submit'] == 'hinzufuegen_earning':
             year = request.form['year']
             month = request.form['month']
