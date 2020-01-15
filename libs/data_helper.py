@@ -12,7 +12,7 @@ def save_json(path, data):
 
     """
     Summary: 
-    Creates a json file in the json folder
+    Creates a json file
     
     Args:
         path (dictionary): path and filename of the json file. 
@@ -33,7 +33,7 @@ def load_json(path):
         path (string): path of the json file
         
     Returns:
-        data : content of the json file
+        dict : content of the json file
     """
 
     try:
@@ -55,9 +55,6 @@ def month_save(month, year, path):
         path (string): path of the json file
         month (integer): month from the form
         year (integer): year from the form
-        
-    Returns:
-        data : content of json file
     """
 
     #Versuch Json auszulesen
@@ -77,11 +74,11 @@ def expenses_update(path,key,month,year,amount,title):
 
     """
     Summary: 
-    A Form to edit expenses.
+    Edits a specific expense.
     
     Args:
         path (string): path of the json file
-        key (string): key to identify the earning
+        key (string): key to identify the expense
         month (integer): month from the form
         year (integer): year from the form
         amount (integer): amount from the form
@@ -91,13 +88,11 @@ def expenses_update(path,key,month,year,amount,title):
     expenses_delete(path,key,month,year)
     expenses_add(month,year,amount,title,path)
 
-    return
-
 def earnings_update(path,key,month,year,amount,title):
 
     """
     Summary: 
-    A Form to edit earnings.
+    Edits a specific earning.
     
     Args:
         path (string): path of the json file
@@ -110,11 +105,6 @@ def earnings_update(path,key,month,year,amount,title):
 
     earnings_delete(path,key,month,year)
     earnings_add(month,year,amount,title,path)
-
-    return
-
-
-
 
 #Funktion um Kosten hinzuzufügen:
 def expenses_add(month,year,amount,title,path):
@@ -140,9 +130,6 @@ def expenses_add(month,year,amount,title,path):
     
     save_json(path, data)
     decrease_balance(amount,month,year,path)
-
-
-    return
 
 
 #Funktion um Kosten zu löschen:
@@ -191,15 +178,15 @@ def earnings_add(month,year,amount,title,path):
     key = int(name + str(random.randrange(0, 1000)))
 
     data = load_json(path)
-    
+    if name not in data:
+        month_save(month, year, path)
+        data = load_json(path)
     
     data[name]["income"][key] = { 'amount': str(amount), 'title': str(title)}
     
     save_json(path, data)
 
     increase_balance(amount,month,year,path)
-
-    return
 
 
 
@@ -249,7 +236,6 @@ def increase_balance(amount, month, year, path):
     balance = float(data[name]["balance"]) + float(amount)
     data[name]["balance"] = str(balance)
     save_json(path, data)
-    return
 
 
 
@@ -272,7 +258,6 @@ def decrease_balance(amount, month, year, path):
     balance = float(data[name]["balance"]) - float(amount)
     data[name]["balance"] = str(balance)
     save_json(path, data)
-    return
 
 
 

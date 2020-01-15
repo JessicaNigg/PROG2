@@ -3,7 +3,7 @@ Summary:
     Main python file to run the webapp. It routes the webrequest to the correct functions. 
 Args:
     app: defines the name of the web app
-    path: path of the CSV-Files
+    path: path of the data.json file
 """
 
 from flask import Flask
@@ -25,7 +25,7 @@ def index():
     """
     Summary: 
     Start page of the tool. 
-    When https://127.0.0.1:5000 is called for the first time, index.html is called. 
+    When http://127.0.0.1:5000 is called for the first time, index.html is called. 
     Creat a new month: enter month and year and press the button "Hinzufügen"
     Show existing month: enter month and year and press the button "Übersicht"
     Delete existing month: enter month and year and press the button "Löschen"
@@ -109,10 +109,10 @@ def delete_expenses(key, year, month):
 
     """
     Summary: 
-    Delete a specific expense in a month.
+    Deletes a specific expense in a month.
     
     Args:
-        key (string): key to identify the earning
+        key (string): key to identify the expense
         year (integer): year from the form
         month (integer): month from the form
         
@@ -129,10 +129,10 @@ def edit_expenses(key, year, month):
 
     """
     Summary: 
-    Edit a specific expense in a month.
+    Edits a specific expense in a month.
     
     Args:
-        key (string): key to identify the earning
+        key (string): key to identify the expense
         year (integer): year from the form
         month (integer): month from the form
         
@@ -157,7 +157,7 @@ def edit_earnings(key, year, month):
 
     """
     Summary: 
-    Edit a specific earning in a month.
+    Edits a specific earning in a month.
     
     Args:
         key (string): key to identify the earning

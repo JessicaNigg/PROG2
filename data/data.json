@@ -1,12 +1,27 @@
 {
-    "12019": {
-        "expenses": {
-            "12019343": {
-                "amount": "2000",
-                "title": "Miete"
+    "82019": {
+        "expenses": {},
+        "income": {},
+        "balance": "0"
+    },
+    "92019": {
+        "expenses": {},
+        "income": {
+            "92019204": {
+                "amount": "500",
+                "title": "test2"
             }
         },
-        "income": {},
-        "balance": "-2000.0"
+        "balance": "500.0"
+    },
+    "12019": {
+        "expenses": {},
+        "income": {
+            "12019564": {
+                "amount": "5000",
+                "title": "Lohn"
+            }
+        },
+        "balance": "5000.0"
     }
 }
