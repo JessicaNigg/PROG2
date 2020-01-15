@@ -1,7 +1,12 @@
 {
     "12019": {
-        "expenses": {},
+        "expenses": {
+            "12019343": {
+                "amount": "2000",
+                "title": "Miete"
+            }
+        },
         "income": {},
-        "balance": "0"
+        "balance": "-2000.0"
     }
 }

@@ -1,3 +1,11 @@
+""" 
+Summary: 
+    Main python file to run the webapp. It routes the webrequest to the correct functions. 
+Args:
+    app: defines the name of the web app
+    path: path of the CSV-Files
+"""
+
 from flask import Flask
 from flask import render_template
 from flask import url_for
@@ -5,14 +13,30 @@ from flask import redirect
 from flask import request
 from libs import data_helper
 
+#global varibales
 app = Flask("time_recording")
-
 path = "./data/data.json"
 
-# Home-Seite
+#Home
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
+
+    """
+    Summary: 
+    Start page of the tool. 
+    When https://127.0.0.1:5000 is called for the first time, index.html is called. 
+    Creat a new month: enter month and year and press the button "Hinzufügen"
+    Show existing month: enter month and year and press the button "Übersicht"
+    Delete existing month: enter month and year and press the button "Löschen"
+    Add income: enter month, year, amount and title and press the button "Hinzufügen"
+    Add expenses: enter month, year, amount and title and press the button "Hinzufügen"
+   
+        
+    Returns:
+        Renders templates or call functions with the path.
+    """
+
     if request.method == 'POST':
         if request.form['submit'] == 'uebersicht':
             year = request.form['year']
@@ -60,21 +84,62 @@ def index():
 
 
 # Month_overview-Seite
-
 @app.route('/delete/earning/<key>/<year>/<month>')
 def delete_earning(key, year, month):
+
+    """
+    Summary: 
+    Delete a specific earning in a month.
+    
+    Args:
+        key (string): key to identify the earning
+        year (integer): year from the form
+        month (integer): month from the form
+        
+    Returns:
+        redirect to homesite
+    """
+
     data_helper.earnings_delete(path, key, month, year)
     return redirect((url_for("index")))
 
 
 @app.route('/delete/expenses/<key>/<year>/<month>')
 def delete_expenses(key, year, month):
+
+    """
+    Summary: 
+    Delete a specific expense in a month.
+    
+    Args:
+        key (string): key to identify the earning
+        year (integer): year from the form
+        month (integer): month from the form
+        
+    Returns:
+        redirect to homesite
+    """
+
     data_helper.expenses_delete(path, key, month, year)
     return redirect((url_for("index")))
 
 
 @app.route('/edit/expenses/<key>/<year>/<month>', methods=['GET', 'POST'])
 def edit_expenses(key, year, month):
+
+    """
+    Summary: 
+    Edit a specific expense in a month.
+    
+    Args:
+        key (string): key to identify the earning
+        year (integer): year from the form
+        month (integer): month from the form
+        
+    Returns:
+        Form to edit details of an expense
+    """
+
     if request.method == 'POST':
         amount = request.form['amount']
         title = request.form['title']
@@ -89,6 +154,20 @@ def edit_expenses(key, year, month):
 
 @app.route('/edit/earning/<key>/<year>/<month>', methods=['GET', 'POST'])
 def edit_earnings(key, year, month):
+
+    """
+    Summary: 
+    Edit a specific earning in a month.
+    
+    Args:
+        key (string): key to identify the earning
+        year (integer): year from the form
+        month (integer): month from the form
+        
+    Returns:
+        Form to edit details of an earning
+    """
+
     if request.method == 'POST':
         amount = request.form['amount']
         title = request.form['title']
