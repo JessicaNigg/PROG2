@@ -7,7 +7,7 @@ import json
 import random
 
 
-#Funktion um Json-Dateien zu speichern
+#function to save a json-file
 def save_json(path, data):
 
     """
@@ -22,7 +22,7 @@ def save_json(path, data):
     with open(path, "w", encoding="utf-8") as open_file:
         json.dump(data, open_file, indent=4)
 
-#Funktion um Json-Dateien zu laden
+#function to load a json-file
 def load_json(path):
 
     """
@@ -44,7 +44,7 @@ def load_json(path):
         data = {}
         return data
 
-#Funktion um einen Monat zu speichern:
+#function to save a month
 def month_save(month, year, path):
 
     """
@@ -57,7 +57,7 @@ def month_save(month, year, path):
         year (integer): year from the form
     """
 
-    #Versuch Json auszulesen
+    #try to read json-file
     name = str(month) + str(year)
     data = load_json(path)
     if name in data:
@@ -69,7 +69,7 @@ def month_save(month, year, path):
     save_json(path,data)
 
 
-#Funktion um einen Monat zu bearbeiten:
+#function to edit a month
 def expenses_update(path,key,month,year,amount,title):
 
     """
@@ -106,7 +106,7 @@ def earnings_update(path,key,month,year,amount,title):
     earnings_delete(path,key,month,year)
     earnings_add(month,year,amount,title,path)
 
-#Funktion um Kosten hinzuzufügen:
+#function to add expenses
 def expenses_add(month,year,amount,title,path):
 
     """
@@ -132,7 +132,7 @@ def expenses_add(month,year,amount,title,path):
     decrease_balance(amount,month,year,path)
 
 
-#Funktion um Kosten zu löschen:
+#function to delete expenses
 def expenses_delete(path,key,month,year):
 
     """
@@ -159,7 +159,7 @@ def expenses_delete(path,key,month,year):
         return
 
 
-#Funktion um Einnahmen hinzuzufügen:
+#function to add earnings
 def earnings_add(month,year,amount,title,path):
 
     """
@@ -190,7 +190,7 @@ def earnings_add(month,year,amount,title,path):
 
 
 
-#Funktion um Einnahmen zu löschen:
+#function to delete earnings
 def earnings_delete(path,key,month,year):
 
     """
@@ -217,7 +217,7 @@ def earnings_delete(path,key,month,year):
         return
 
 
-#Funktion Saldo zu erhöhen:
+#function to increase the balance
 def increase_balance(amount, month, year, path):
 
     """
@@ -239,7 +239,7 @@ def increase_balance(amount, month, year, path):
 
 
 
-#Funktion Saldo verringern
+#function to decrease the balance
 def decrease_balance(amount, month, year, path):
 
     """
@@ -261,7 +261,7 @@ def decrease_balance(amount, month, year, path):
 
 
 
-#Funktion um Monat zu löschen:
+#function to delete a month
 def month_delete(path,month,year):
 
     """

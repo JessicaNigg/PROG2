@@ -83,7 +83,7 @@ def index():
     return render_template("index.html")
 
 
-# Month_overview-Seite
+# Month_overview
 @app.route('/delete/earning/<key>/<year>/<month>')
 def delete_earning(key, year, month):
 
